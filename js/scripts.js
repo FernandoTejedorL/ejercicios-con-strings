@@ -167,11 +167,16 @@ function totalChar(wordI, wordJ, wordK) {
 que cada palabra comience con mayúscula. Por ejemplo, "hola mundo" se convertiría en "Hola Mundo".*/
 
 function toConvertIntoTitle(sentenceTo) {
-    return sentenceTo.charAt(0).toUpperCase() + sentenceTo.charAt(sentenceTo.indexOf(' ')+1).toUpperCase();
+    const start = sentenceTo.charAt(0).toUpperCase();
+    const restOfWord = sentenceTo.substring(1, (sentenceTo.indexOf(' ')));
+    const startOfSecond = sentenceTo.charAt((sentenceTo.indexOf(' ')) + 1).toUpperCase();
+    const restOfSecond = sentenceTo.substring((sentenceTo.indexOf(' ')) + 2)
+
+    return start+restOfWord+' '+startOfSecond+restOfSecond
 }
 
-const sentenceTo1 = toConvertIntoTitle('perro bonito');
-console.log(sentenceTo1);
+console.log(toConvertIntoTitle('gato amarillo'))
+
 
 /* 12. Crea una función que reciba un nombre y un apellido y devuelva las iniciales en mayúsculas. 
 Por ejemplo, si recibe "Carlos Pérez", deberá devolver "C.P.".*/
