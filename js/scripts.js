@@ -122,18 +122,22 @@ pertenecen. Por ejemplo, si la función recibe "andar" y "correr" debe imprimir 
 de la primera conjugación y el verbo correr de la segunda conjugación".*/
 
 
-function conjugation(verb) {
-    if (verb.substring(verb.length-2) === 'ar') {
-        return 'El verbo ' + verb + ' es de la primera conjugación.';
-    } else if (verb.substring(verb.length-2) === 'er') {
-        return 'El verbo ' + verb + ' es de la segunda conjugación.';
+function extractConj(verb) {
+    if (verb.endsWith('ar')){
+        return 'es de la primera conjugación';
+    } else if (verb.endsWith('er')) {
+        return 'es de la segunda conjugación';
     } 
-
-    return 'El verbo ' + verb + ' no es ni de la primera ni de la segunda conjugación.';
+    return 'es de la tercera conjugación';
 }
 
-const verb1 = conjugation('comer');
-console.log(verb1);
+function checkConjugation(verb1, verb2) {
+    console.log(`El verbo ${verb1} ${extractConj(verb1)} y el verbo ${verb2} ${extractConj(verb2)}`);   
+}
+
+checkConjugation('comer', 'vivir');
+checkConjugation('saltar', 'corretear');
+checkConjugation('tejer', 'crujir');
 
 /* 9. Crea una función que reciba una palabra de 4 letras y devuelva la palabra invertida.
 Por ejemplo, si recibe "casa", deberá devolver "asac".*/
