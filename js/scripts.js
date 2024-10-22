@@ -203,6 +203,7 @@ console.log(averageOf1);
 lo formatee de la siguiente manera: "(123) 456-7890".*/
 
 function telephoneStyle(numberTo) {
+    
     return '(' + numberTo.substring(0, 3) + ') ' + numberTo.substring(3, 6) + '-' + numberTo.substring(6); 
 }
 
