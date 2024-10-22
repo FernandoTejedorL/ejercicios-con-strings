@@ -182,7 +182,8 @@ console.log(toConvertIntoTitle('gato amarillo'))
 Por ejemplo, si recibe "Carlos Pérez", deberá devolver "C.P.".*/
 
 function toConvertIntoInitials(nameTo) {
-    return nameTo.charAt(0).toUpperCase() + '.' + nameTo.charAt(nameTo.indexOf(' ')+1).toUpperCase() + '.';
+    return nameTo.charAt(0).toUpperCase() + '.' +
+        nameTo.charAt(nameTo.indexOf(' ') + 1).toUpperCase() + '.';
 }
 
 const nameTo1 = toConvertIntoInitials('fernando tejedor');
